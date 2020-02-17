@@ -95,6 +95,7 @@ In my third essay, I propose to evaluate the effects of a smartphone-based, info
 
 %-----------------------------------------------------------------------%
 \newpage
+
 \section{Background \& Data} \label{sec:background}
 
 In Nepal, where 68 percent of the population depends on agriculture for their livelihood \citep{ILO16}, goats are a common source of income and nutrition. This is particularly true in rural areas, where nearly every household owns a least a few goats for production and/or consumption \citep{upreti09}. In recent years, urbanization and rising incomes have lead to a higher demand for goat meat, but a poorly functioning value chain has left smallholder producers, most of whom are women, unable to benefit \citep{ashby-et.al.09,choudhary-et.al.11,gurung-et.al.15}. Smallholders face high transaction costs, weak bargaining power and a lack of communication infrastructure that limit their ability to access and gain from formal output markets \citep{ashby-et.al.09,kristjanson-et.al.14}. As a result, domestic production has been unable to keep up with rising demand, leading to higher imports from India and Tibet \citep{HI-N12}.
@@ -169,6 +170,7 @@ Table (\ref{table:summary}) displays summary statistics from the 2018 sample of 
 %-----------------------------------------------------------------------%
 \newpage
 \singlespacing
+
 \section{Investigating the Inclusive-Performance Tradeoff in Agricultural Cooperatives} \label{sec:E1}
 \doublespacing
 
@@ -252,21 +254,21 @@ The \citet{oaxaca73}-\citet{blinder73} decomposition allows me to separate the o
 Given that the most and least inclusive cooperatives likely differ in their ability to translate farmer potential into performance, I will allow for different values of $\beta$ for each group. Using the group-specific parameters, the difference between average outcomes for the most and least inclusive cooperatives is written as:
 
 \begin{equation} \label{eq:E1_2}
-        \overline{Y}_{h} - \overline{Y}_{\ell} =  \beta_{h}\overline{\mathbf{X}}_{h} - \beta_{\ell}\overline{\mathbf{X}}_{\ell}
+        \overline{Y}_{\ell} - \overline{Y}_{m} =  \beta_{\ell}\overline{\mathbf{X}}_{\ell} - \beta_{m}\overline{\mathbf{X}}_{m}
 \end{equation}  
 
-Rearranging this equation by adding and subtracting $\beta_{\ell}\overline{X}_{h}$ on both sides gives:
+where $\ell$ and $m$ represent the least and most inclusive cooperatives, respectively. Rearranging this equation by adding and subtracting $\beta_{m}\overline{X}_{\ell}$ on both sides gives:
 
 \begin{subequations}
     \begin{align}
-        \overline{Y}&_{h} - \overline{Y}_{\ell} \label{eq:E1_3a} \\
-        &= \beta_{\ell}[\overline{\mathbf{X}}_{h} - \overline{\mathbf{X}}_{\ell}] \label{eq:E1_3b} \\
-        &+ \overline{\mathbf{X}}_{h}[\beta_{h} - \beta_{\ell}] \label{eq:E1_3c}
+        \overline{Y}&_{\ell} - \overline{Y}_{m} \label{eq:E1_3a} \\
+                &= \beta_{m}[\overline{\mathbf{X}}_{\ell} - \overline{\mathbf{X}}_{m}] \label{eq:E1_3b} \\
+                &+ \overline{\mathbf{X}}_{\ell}[\beta_{\ell} - \beta_{m}] \label{eq:E1_3c}s
     \end{align}
 \end{subequations}  
 
-Here, (\ref{eq:E1_3b}) is the explained component (weighted by the coefficients for producers in the least inclusive cooperatives), which is the difference between the average outcomes that producers in the least inclusive cooperatives actually receive, given their characteristics, and what they could receive if their characteristics matched those of producers in the most inclusive cooperatives. %CM: Importantly, this interpretation holds regardless of whether the conditional mean is linear in parameters, because the regression line always go through the sample average (Ybar and Xbar). In other words, not only do you not have to identify a causal effect, you also don't need a linear conditional mean for this decomposition to be useful.
-Line (\ref{eq:E1_3c}) is the unexplained component (weighted by the characteristics of producers in the most inclusive cooperatives), which is the difference in what producers in the most inclusive cooperatives actually receive and what they would receive if they had equivalent returns to their characteristics as those in the least inclusive cooperatives.
+Here, (\ref{eq:E1_3b}) is the explained component (weighted by the coefficients for producers in the most inclusive cooperatives), which is the difference between the average outcomes that producers in the most inclusive cooperatives actually receive, given their characteristics, and what they could receive if their characteristics matched those of producers in the least inclusive cooperatives. %CM: Importantly, this interpretation holds regardless of whether the conditional mean is linear in parameters, because the regression line always go through the sample average (Ybar and Xbar). In other words, not only do you not have to identify a causal effect, you also don't need a linear conditional mean for this decomposition to be useful.
+Line (\ref{eq:E1_3c}) is the unexplained component (weighted by the characteristics of producers in the least inclusive cooperatives), which is the difference in what producers in the least inclusive cooperatives actually receive and what they would receive if they had equivalent returns to their characteristics as those in the most inclusive cooperatives.
 
 % --------------------------------------
 \subsubsection{Estimating the Oaxaca Decomposition} \label{sec:E1_est}
@@ -285,22 +287,22 @@ Starting with the cross-sectional approach, I expand equation (\ref{eq:E1_1}) to
 where $Y_{ij}$ is the outcome of interest for individual $i$ who is a member of cooperative $j$, $\mathbf{X}_i$ is a vector of individual attributes, and $\mathbf{Z}_j$ is a vector of institutional attributes. Allowing for the most and least inclusive cooperatives to differ in their ability to translate farmer potential and institutional attributes into outcomes, equation (\ref{eq:E1_2}) becomes
 
 \begin{equation} \label{eq:E1_5}
-        \overline{Y}_{h} - \overline{Y}_{\ell} =  (\beta_{h}\overline{\mathbf{X}}_{h} - \beta_{\ell}\overline{\mathbf{X}}_{\ell}) + (\gamma_{h}\overline{\mathbf{Z}}_{h} - \gamma_{\ell}\overline{\mathbf{Z}}_{\ell})
+        \overline{Y}_{\ell} - \overline{Y}_{m} =  (\beta_{\ell}\overline{\mathbf{X}}_{\ell} - \beta_{m}\overline{\mathbf{X}}_{m}) + (\gamma_{\ell}\overline{\mathbf{Z}}_{\ell} - \gamma_{m}\overline{\mathbf{Z}}_{m})
 \end{equation}  
 
-Rearranging equation (\ref{eq:E1_5}) by adding and subtracting $(\beta_{\ell}\overline{\mathbf{X}}_{h} + \gamma_{\ell}\overline{\mathbf{Z}}_{h})$ on both sides gives my final cross-sectional equation:
+Rearranging equation (\ref{eq:E1_5}) by adding and subtracting $(\beta_{m}\overline{\mathbf{X}}_{\ell} + \gamma_{m}\overline{\mathbf{Z}}_{\ell})$ on both sides gives my final cross-sectional equation:
 
 \begin{subequations}
     \begin{align}
-        \overline{Y}&_{h} - \overline{Y}_{\ell} \label{eq:E1_6a} \\
-        &= (\beta_{\ell}[\overline{\mathbf{X}}_{h} - \overline{\mathbf{X}}_{\ell}] + \gamma_{\ell}[\overline{\mathbf{Z}}_{h} - \overline{\mathbf{Z}}_{\ell}]) \label{eq:E1_6b} \\
-        &+ (\overline{\mathbf{X}}_{h}[\beta_{h} - \beta_{\ell}] + \overline{\mathbf{Z}}_{h}[\gamma_{h} - \gamma_{\ell}]) \label{eq:E1_6c}
+        \overline{Y}&_{\ell} - \overline{Y}_{m} \label{eq:E1_6a} \\
+        &= (\beta_{m}[\overline{\mathbf{X}}_{\ell} - \overline{\mathbf{X}}_{m}] + \gamma_{m}[\overline{\mathbf{Z}}_{\ell} - \overline{\mathbf{Z}}_{m}]) \label{eq:E1_6b} \\
+        &+ (\overline{\mathbf{X}}_{\ell}[\beta_{\ell} - \beta_{m}] + \overline{\mathbf{Z}}_{\ell}[\gamma_{\ell} - \gamma_{m}]) \label{eq:E1_6c}
     \end{align}
 \end{subequations}  
 
-As in the example in section \ref{sec:E1_theory}, equation (\ref{eq:E1_6b}) is the explained component (weighted by the coefficients for producers in the least inclusive cooperatives, as well as the coefficients for the characteristics of these cooperatives). The first part of this equation, $\beta_{\ell}[\overline{\mathbf{X}}_{h} - \overline{\mathbf{X}}_{\ell}]$, is the difference between average outcomes that producers in the least inclusive cooperatives actually receive, given their characteristics, and what they would receive if their characteristics were changed to match those of producers in the most inclusive cooperatives. The second part of this equation, $\gamma_{\ell}[\overline{\mathbf{Z}}_{h} - \overline{\mathbf{Z}}_{\ell}]$, is the cooperative-level analog to the first part. This represents the average outcomes that producers in the least inclusive cooperatives actually receive, given their cooperative's characteristics, and what they would receive if their cooperative's characteristics were changed to match those of the most inclusive cooperatives. This is the portion of the gap that is due to individual and institutional characteristics, respectively.
+As in the example in section \ref{sec:E1_theory}, equation (\ref{eq:E1_6b}) is the explained component (weighted by the coefficients for producers in the most inclusive cooperatives, as well as the coefficients for the characteristics of these cooperatives). The first part of this equation, $\beta_{m}[\overline{\mathbf{X}}_{\ell} - \overline{\mathbf{X}}_{m}]$, is the difference between average outcomes that producers in the most inclusive cooperatives actually receive, given their characteristics, and what they would receive if their characteristics were changed to match those of producers in the least inclusive cooperatives. The second part of this equation, $\gamma_{m}[\overline{\mathbf{Z}}_{\ell} - \overline{\mathbf{Z}}_{m}]$, is the cooperative-level analog to the first part. This represents the average outcomes that producers in the most inclusive cooperatives actually receive, given their cooperative's characteristics, and what they would receive if their cooperative's characteristics were changed to match those of the least inclusive cooperatives. This is the portion of the gap that is due to individual and institutional characteristics, respectively.
 
-Equation (\ref{eq:E1_6c}) is the unexplained component (weighted by the characteristics of producers in the most inclusive cooperatives, as well as the institutional characteristics of these cooperatives). The first part of this equation, $\overline{\mathbf{X}}_{h}[\beta_{h} - \beta_{\ell}]$, is the difference in what producers in the most inclusive cooperatives actually receive and what they would receive if they had equivalent returns to their characteristics as those in the least inclusive cooperatives. The institutional analog, $\overline{\mathbf{Z}}_{h}[\gamma_{h} - \gamma_{\ell}]$, is the difference that producers in the most inclusive cooperatives actually receive and what they would receive if they had equivalent returns to institutional characteristics as those in the least inclusive cooperatives. This is the portion of the gap that is due to individual and institutional returns, respectively. \\
+Equation (\ref{eq:E1_6c}) is the unexplained component (weighted by the characteristics of producers in the least inclusive cooperatives, as well as the institutional characteristics of these cooperatives). The first part of this equation, $\overline{\mathbf{X}}_{\ell}[\beta_{\ell} - \beta_{m}]$, is the difference in what producers in the least inclusive cooperatives actually receive and what they would receive if they had equivalent returns to their characteristics as those in the most inclusive cooperatives. The institutional analog, $\overline{\mathbf{Z}}_{\ell}[\gamma_{\ell} - \gamma_{m}]$, is the difference that producers in the least inclusive cooperatives actually receive and what they would receive if they had equivalent returns to institutional characteristics as those in the most inclusive cooperatives. This is the portion of the gap that is due to individual and institutional returns, respectively. \\
 
 % --------------------------------------
 \noindent \textbf{First-Difference Panel Approach}
@@ -315,25 +317,25 @@ where $\Delta Y_{ij}$ $(= Y_{ij,t=1} - Y_{ij,t=0})$ is the outcome of interest f
 
 \begin{subequations}
     \begin{align}
-        \overline{\Delta Y}_{h} - \overline{\Delta Y}_{\ell} &= \label{eq:E1_8a} \\ 
-        &\big{\{}(\beta_{h}\overline{\Delta \mathbf{X}}_{h} - \beta_{\ell}\overline{\Delta \mathbf{X}}_{\ell}) + (\delta_{h}\overline{\mathbf{h}}_{h} - \delta_{\ell}\overline{\mathbf{h}}_{\ell}) \big{\}} \label{eq:E1_8b} \\ 
-        &+ \big{\{}(\gamma_{h}\overline{\Delta \mathbf{Z}}_{h} - \gamma_{\ell}\overline{\Delta \mathbf{Z}}_{\ell}) + (\theta_{h}\overline{\mathbf{c}}_{h} - \theta_{\ell}\overline{\mathbf{c}}_{\ell}) \big{\}} \label{eq:E1_8c}
+        \overline{\Delta Y}_{\ell} - \overline{\Delta Y}_{m} &= \label{eq:E1_8a} \\ 
+        &\big{\{}(\beta_{\ell}\overline{\Delta \mathbf{X}}_{\ell} - \beta_{m}\overline{\Delta \mathbf{X}}_{m}) + (\delta_{\ell}\overline{\mathbf{h}}_{\ell} - \delta_{m}\overline{\mathbf{h}}_{m}) \big{\}} \label{eq:E1_8b} \\ 
+        &+ \big{\{}(\gamma_{\ell}\overline{\Delta \mathbf{Z}}_{\ell} - \gamma_{m}\overline{\Delta \mathbf{Z}}_{m}) + (\theta_{\ell}\overline{\mathbf{c}}_{\ell} - \theta_{m}\overline{\mathbf{c}}_{m}) \big{\}} \label{eq:E1_8c}
     \end{align}
 \end{subequations}  
 
-Rearranging equations (\ref{eq:E1_8a}-\ref{eq:E1_8c}) by adding and subtracting $(\beta_{\ell}\overline{\mathbf{X}}_{h} + \delta_{\ell}\overline{\mathbf{h}}_{h}) + (\gamma_{\ell}\overline{\mathbf{Z}}_{h} + \theta_{\ell}\overline{\mathbf{c}}_{h})$ on both sides gives my final panel equation:
+Rearranging equations (\ref{eq:E1_8a}-\ref{eq:E1_8c}) by adding and subtracting $(\beta_{m}\overline{\mathbf{X}}_{\ell} + \delta_{m}\overline{\mathbf{h}}_{\ell}) + (\gamma_{m}\overline{\mathbf{Z}}_{\ell} + \theta_{m}\overline{\mathbf{c}}_{\ell})$ on both sides gives my final panel equation:
 
 \begin{subequations}
     \begin{align}
-        \overline{\Delta Y}_{h} - \overline{\Delta Y}_{\ell} &= \label{eq:E1_9a} \\ 
-        &\big{\{}(\beta_{\ell}[\overline{\Delta \mathbf{X}}_{h} - \overline{\Delta \mathbf{X}}_{\ell}] + \gamma_{\ell}[\overline{\Delta \mathbf{Z}}_{h} - \overline{\Delta \mathbf{Z}}_{\ell}]) \label{eq:E1_9b} \\
-        &+ (\delta_{\ell}[\overline{\mathbf{h}}_{h} - \overline{\mathbf{h}}_{\ell}] + \theta_{\ell}[\overline{\mathbf{c}}_{h} - \overline{\mathbf{c}}_{\ell}])\big{\}} \label{eq:E1_9c} \\
-        &+ \big{\{}(\overline{\Delta \mathbf{X}}_{h}[\beta_{h} - \beta_{\ell}] + \overline{\Delta \mathbf{Z}}_{h}[\gamma_{h} - \gamma_{\ell}]) \label{eq:E1_9d} \\
-        &+ (\overline{\mathbf{h}}_{h}[\delta_{h} - \delta_{\ell}] + \overline{\mathbf{c}}_{h}[\theta_{h} - \theta_{\ell}])\big{\}} \label{eq:E1_9e}
+        \overline{\Delta Y}_{\ell} - \overline{\Delta Y}_{m} &= \label{eq:E1_9a} \\ 
+        &\big{\{}(\beta_{m}[\overline{\Delta \mathbf{X}}_{\ell} - \overline{\Delta \mathbf{X}}_{m}] + \gamma_{m}[\overline{\Delta \mathbf{Z}}_{\ell} - \overline{\Delta \mathbf{Z}}_{m}]) \label{eq:E1_9b} \\
+        &+ (\delta_{m}[\overline{\mathbf{h}}_{\ell} - \overline{\mathbf{h}}_{m}] + \theta_{m}[\overline{\mathbf{c}}_{\ell} - \overline{\mathbf{c}}_{m}])\big{\}} \label{eq:E1_9c} \\
+        &+ \big{\{}(\overline{\Delta \mathbf{X}}_{\ell}[\beta_{\ell} - \beta_{m}] + \overline{\Delta \mathbf{Z}}_{\ell}[\gamma_{\ell} - \gamma_{m}]) \label{eq:E1_9d} \\
+        &+ (\overline{\mathbf{h}}_{\ell}[\delta_{\ell} - \delta_{m}] + \overline{\mathbf{c}}_{\ell}[\theta_{\ell} - \theta_{m}])\big{\}} \label{eq:E1_9e}
     \end{align}
 \end{subequations}  
 
-Although equations (\ref{eq:E1_9a}-\ref{eq:E1_9e}) include additional parameters, the interpretation closely follows that of the cross-sectional approach. Equations (\ref{eq:E1_9b}-\ref{eq:E1_9c}) are the explained component, i.e. the difference between average outcomes that producers in the least inclusive cooperatives actually receive, given the individual and institutional characteristics characteristics, and what they would receive if these characteristics were changed to match those of the most inclusive cooperatives. Equations (\ref{eq:E1_9d}-\ref{eq:E1_9e}) are the unexplained component, i.e. the difference in what producers in the most inclusive cooperatives actually receive and what they would receive if they had equivalent returns to their individual and institutional characteristics as those in the least inclusive cooperatives.
+Although equations (\ref{eq:E1_9a}-\ref{eq:E1_9e}) include additional parameters, the interpretation closely follows that of the cross-sectional approach. Equations (\ref{eq:E1_9b}-\ref{eq:E1_9c}) are the explained component, i.e. the difference between average outcomes that producers in the most inclusive cooperatives actually receive, given the individual and institutional characteristics characteristics, and what they would receive if these characteristics were changed to match those of the least inclusive cooperatives. Equations (\ref{eq:E1_9d}-\ref{eq:E1_9e}) are the unexplained component, i.e. the difference in what producers in the least inclusive cooperatives actually receive and what they would receive if they had equivalent returns to their individual and institutional characteristics as those in the most inclusive cooperatives.
 %CM: It might be helpful for the reader to motivate how you've specified the fixed effects. If these were individuals it would be easy to motivate as time-invariant ability, with regression parameters representing the marginal effect of ability. But in this case, I'm not too sure. You can also just say it is an arbitrary way to specify the fixed effects as well (although you should make sure this specification does not matter for a Oaxaca set up). 
 
 % --------------------------------------
@@ -350,13 +352,13 @@ In order to decompose the gap in cooperative performance into the portion that c
         \noalign{\smallskip} \hline \noalign{\smallskip}
         Gap Portion & Equation \\
         \noalign{\smallskip} \hline \noalign{\smallskip}
-        Full & $\overline{Y}_{h} - \overline{Y}_{\ell}$ \\ \\
-        Individual (All) & $\beta_{\ell}[\overline{\mathbf{X}}_{h} - \overline{\mathbf{X}}_{\ell}] + \overline{\mathbf{X}}_{h}[\beta_{h} - \beta_{\ell}]$ \\
-        Individual (Characteristics) & $\beta_{\ell}[\overline{\mathbf{X}}_{h} - \overline{\mathbf{X}}_{\ell}]$ \\
-        Individual (Returns) & $\overline{\mathbf{X}}_{h}[\beta_{h} - \beta_{\ell}]$ \\ \\
-        Institutional (All) & $\gamma_{\ell}[\overline{\mathbf{Z}}_{h} - \overline{\mathbf{Z}}_{\ell}] + \overline{\mathbf{Z}}_{h}[\gamma_{h} - \gamma_{\ell}]$ \\
-        Institutional (Characteristics) & $\gamma_{\ell}[\overline{\mathbf{Z}}_{h} - \overline{\mathbf{Z}}_{\ell}]$ \\
-        Institutional (Returns) & $\overline{\mathbf{Z}}_{h}[\gamma_{h} - \gamma_{\ell}]$ \\
+        Full & $\overline{Y}_{\ell} - \overline{Y}_{m}$ \\ \\
+        Individual (All) & $\beta_{m}[\overline{\mathbf{X}}_{\ell} - \overline{\mathbf{X}}_{m}] + \overline{\mathbf{X}}_{\ell}[\beta_{\ell} - \beta_{m}]$ \\
+        Individual (Characteristics) & $\beta_{m}[\overline{\mathbf{X}}_{\ell} - \overline{\mathbf{X}}_{m}]$ \\
+        Individual (Returns) & $\overline{\mathbf{X}}_{\ell}[\beta_{\ell} - \beta_{m}]$ \\ \\
+        Institutional (All) & $\gamma_{m}[\overline{\mathbf{Z}}_{\ell} - \overline{\mathbf{Z}}_{m}] + \overline{\mathbf{Z}}_{\ell}[\gamma_{\ell} - \gamma_{m}]$ \\
+        Institutional (Characteristics) & $\gamma_{m}[\overline{\mathbf{Z}}_{\ell} - \overline{\mathbf{Z}}_{m}]$ \\
+        Institutional (Returns) & $\overline{\mathbf{Z}}_{\ell}[\gamma_{\ell} - \gamma_{m}]$ \\
         \hline
         \end{tabular}}
         \end{table}   
@@ -370,16 +372,16 @@ In order to decompose the gap in cooperative performance into the portion that c
         \noalign{\smallskip} \hline \noalign{\smallskip}
         Gap Portion & Equation \\
         \noalign{\smallskip} \hline \noalign{\smallskip}
-        Full & $\overline{\Delta Y}_{h} - \overline{\Delta Y}_{\ell}$ \\ \\
-        Individual (All) & $\beta_{\ell}[\overline{\Delta \mathbf{X}}_{h} - \overline{\Delta \mathbf{X}}_{\ell}] + \overline{\Delta \mathbf{X}}_{h}[\beta_{h} - \beta_{\ell}]$ \\
-        & $+ \delta_{\ell}[\overline{\mathbf{h}}_{h} - \overline{\mathbf{h}}_{\ell}] + \overline{\mathbf{h}}_{h}[\delta_{h} - \delta_{\ell}]$ \\
-        Individual (Characteristics) & $\beta_{\ell}[\overline{\Delta \mathbf{X}}_{h} - \overline{\Delta \mathbf{X}}_{\ell}] + \delta_{\ell}[\overline{\mathbf{h}}_{h} - \overline{\mathbf{h}}_{\ell}]$ \\
-        Individual (Returns) & $\overline{\Delta \mathbf{X}}_{h}[\beta_{h} - \beta_{\ell}] + \overline{\mathbf{h}}_{h}[\delta_{h} - \delta_{\ell}]$ \\ \\
-        
-        Institutional (All) & $\gamma_{\ell}[\overline{\Delta \mathbf{Z}}_{h} - \overline{\Delta \mathbf{Z}}_{\ell}] + \overline{\Delta \mathbf{Z}}_{h}[\gamma_{h} - \gamma_{\ell}]$ \\
-        & + $\theta_{\ell}[\overline{\mathbf{c}}_{h} - \overline{\mathbf{c}}_{\ell}] + \overline{\mathbf{c}}_{h}[\theta_{h} - \theta_{\ell}]$ \\
-        Institutional (Characteristics) & $\gamma_{\ell}[\overline{\Delta \mathbf{Z}}_{h} - \overline{\Delta \mathbf{Z}}_{\ell}] + \theta_{\ell}[\overline{\mathbf{c}}_{h} - \overline{\mathbf{c}}_{\ell}]$ \\
-        Institutional (Returns) & $\overline{\Delta \mathbf{Z}}_{h}[\gamma_{h} - \gamma_{\ell}] + \overline{\mathbf{c}}_{h}[\theta_{h} - \theta_{\ell}]$\\
+        Full & $\overline{\Delta Y}_{\ell} - \overline{\Delta Y}_{m}$ \\ \\
+        Individual (All) & $\beta_{m}[\overline{\Delta \mathbf{X}}_{\ell} - \overline{\Delta \mathbf{X}}_{m}] + \overline{\Delta \mathbf{X}}_{\ell}[\beta_{\ell} - \beta_{m}]$ \\
+        & $+ \delta_{m}[\overline{\mathbf{h}}_{\ell} - \overline{\mathbf{h}}_{m}] + \overline{\mathbf{h}}_{\ell}[\delta_{\ell} - \delta_{m}]$ \\
+        Individual (Characteristics) & $\beta_{m}[\overline{\Delta \mathbf{X}}_{\ell} - \overline{\Delta \mathbf{X}}_{m}] + \delta_{m}[\overline{\mathbf{h}}_{\ell} - \overline{\mathbf{h}}_{m}]$ \\
+        Individual (Returns) & $\overline{\Delta \mathbf{X}}_{\ell}[\beta_{\ell} - \beta_{m}] + \overline{\mathbf{h}}_{\ell}[\delta_{\ell} - \delta_{m}]$ \\ \\
+
+        Institutional (All) & $\gamma_{m}[\overline{\Delta \mathbf{Z}}_{\ell} - \overline{\Delta \mathbf{Z}}_{m}] + \overline{\Delta \mathbf{Z}}_{\ell}[\gamma_{\ell} - \gamma_{m}]$ \\
+        & + $\theta_{m}[\overline{\mathbf{c}}_{\ell} - \overline{\mathbf{c}}_{m}] + \overline{\mathbf{c}}_{\ell}[\theta_{\ell} - \theta_{m}]$ \\
+        Institutional (Characteristics) & $\gamma_{m}[\overline{\Delta \mathbf{Z}}_{\ell} - \overline{\Delta \mathbf{Z}}_{m}] + \theta_{m}[\overline{\mathbf{c}}_{\ell} - \overline{\mathbf{c}}_{m}]$ \\
+        Institutional (Returns) & $\overline{\Delta \mathbf{Z}}_{\ell}[\gamma_{\ell} - \gamma_{m}] + \overline{\mathbf{c}}_{\ell}[\theta_{\ell} - \theta_{m}]$\\
         \hline
         \end{tabular}}
         \end{table}   
@@ -390,6 +392,7 @@ Tables (\ref{table:E1_1}-\ref{table:E1_2}) display how the results from my cross
 %-----------------------------------------------------------------------%
 \newpage
 \singlespacing
+
 \section{Side-Selling and the Returns to Cooperative Participation: The Role of Comparative Advantage in Smallholder Livestock Cooperatives} \label{sec:E2}
 \doublespacing
 
@@ -592,6 +595,7 @@ I estimate equations (\ref{eq:E2_red1})-(\ref{eq:E2_red2}) as seemingly unrelate
 %-----------------------------------------------------------------------%
 \newpage
 \singlespacing
+
 \section{The Impact of a Smartphone Marketing Application on Smallholder Livestock Producers in Nepal} \label{sec:E3}
 \doublespacing
 
